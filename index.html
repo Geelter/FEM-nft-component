@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&family=Outfit:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./sass/styles.css" />
+
+    <title>Frontend Mentor | NFT preview card component</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <article class="preview">
+        <div class="preview__image">
+          <img src="./images/image-equilibrium.jpg" alt="" />
+        </div>
+
+        <div class="preview__body">
+          <h2 class="preview__body-heading fw-semibold">
+            <a href="#">Equilibrium #3429</a>
+          </h2>
+
+          <p class="preview__body-description fw-light">
+            Our Equilibrium collection promotes balance and calm.
+          </p>
+
+          <div class="preview__body-content">
+            <div class="preview__body-currency fw-medium">
+              <img src="./images/icon-ethereum.svg" alt="" />
+              <span>0.041 ETH</span>
+            </div>
+
+            <div class="preview__body-time fw-light">
+              <img src="./images/icon-clock.svg" alt="" />
+              <span>3 days left</span>
+            </div>
+          </div>
+
+          <hr class="preview__divider" />
+
+          <footer class="preview__footer fw-light">
+            <img
+              class="preview__footer-avatar"
+              src="./images/image-avatar.png"
+              alt="Photo of NFT creator"
+            />
+
+            <p class="preview__footer-text">
+              Creation of <a href="#">Jules Wyvern</a>
+            </p>
+          </footer>
+        </div>
+      </article>
+    </main>
+  </body>
+</html>

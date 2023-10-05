@@ -1,0 +1,204 @@
+/* ---------------------------- */
+/*      Custom properties       */
+/* ---------------------------- */
+
+:root {
+    /* colors */
+    --clr-main-bg: 217 54% 11%;
+    --clr-card-bg: 216 50% 16%;
+    --clr-line: 215 32% 27%;
+    --clr-white: 0 0% 100%;
+
+    --clr-soft-blue: 215 51% 70%;
+    --clr-cyan: 178 100% 50%;
+    
+    /* font-weights */
+    --fw-light: 300;
+    --fw-regular: 400;
+    --fw-semibold: 600;
+}
+
+/* ---------------- */
+/*      Reset       */
+/* ---------------- */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body, h1, h2, h3, h4, p,
+figure, blockquote, dl, dd {
+  margin: 0;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1, h2, h3, h4,
+button, input, label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1, h2,
+h3, h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* remove animations for people who've turned them off */
+@media (prefers-reduced-motion: reduce) {  
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+html {
+    font-size: 18px;
+    font-family: 'Outfit', sans-serif;
+}
+
+/* ------------------------- */
+/*      Utility classes      */
+/* ------------------------- */
+
+/* typography */
+
+.fw-light { font-weight: var(--fw-light); }
+.fw-regular { font-weight: var(--fw-regular); }
+.fw-semibold { font-weight: var(--fw-semibold); }
+
+/* --------------- */
+
+body {
+    color: hsl( var(--clr-soft-blue) );
+    background-color: hsl( var(--clr-main-bg) );
+}
+
+main {
+    display: grid;
+    place-content: center;
+    min-height: 100vh;
+}
+
+.preview {
+    padding: 1.3rem;
+    border-radius: 20px;
+    background-color: hsl( var(--clr-card-bg) );
+    max-width: 20rem;
+
+    margin-inline: 1.3rem;
+
+    &__image {
+        position: relative;
+        border-radius: 10px;
+
+        &::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            border-radius: inherit;
+            background-color: hsl( var(--clr-cyan) / 0.5);
+            background-image: url('../images/icon-view.svg');
+            background-position: center center;
+            background-repeat: no-repeat;
+
+            transition: opacity 300ms ease-in-out;
+            z-index: 100;
+        }
+
+        &:hover::before {
+            opacity: 1;
+        }
+    }
+
+    &__body {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        margin-top: 1.5rem;
+
+        &-heading {
+            font-size: 1.3em;
+        }
+
+        &-content {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        &-currency,
+        &-time {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        &-currency {
+            color: hsl( var(--clr-cyan) );
+        }
+
+    }
+
+    &__divider {
+        margin-bottom: 0;
+        width: 100%;
+        border-color: hsl( var(--clr-line) );
+    }
+
+    &__footer {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        font-size: 0.9em;
+
+        &-avatar {
+            width: 2rem;
+            aspect-ratio: 1;
+            border: 1px solid hsl( var(--clr-white) );
+            border-radius: 100%;
+        }
+    }
+
+    a {
+        color: hsl( var(--clr-white) );
+        text-decoration: none;
+
+        &:hover {
+            color: hsl( var(--clr-cyan) );
+        }
+    }
+}
