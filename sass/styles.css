@@ -165,7 +165,7 @@ main {
 .preview__divider {
   margin-bottom: 0;
   width: 100%;
-  border-color: hsl(var(--clr-line));
+  border: 1px solid hsl(var(--clr-line));
 }
 .preview__footer {
   display: flex;
